@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список товарів</title>
+    <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+<header>
+    <h1>Магазин товарів</h1>
+    <div id="total-price">Загальна вартість: 0 грн</div>
+</header>
+
+<main>
+    <section id="filters"></section>
+    <section id="sorters"></section>
+    <section id="product-list-container">
+        <p id="empty-message">Наразі список товарів пустий. Додайте новий товар.</p>
+        <div id="product-list"></div>
+    </section>
+    <button id="add-product-btn">Додати новий товар</button>
+</main>
+
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <form id="product-form">
+            <h2 id="modal-title">Новий товар</h2>
+            <input type="hidden" id="product-id" />
+            <label>Назва товару: <input type="text" id="product-name" required /></label>
+            <label>Ціна (грн): <input type="number" id="product-price" required min="0" /></label>
+            <label>Категорія:
+                <select id="product-category" required>
+                    <option value="">Оберіть категорію</option>
+                    <option value="Електроніка">Електроніка</option>
+                    <option value="Одяг">Одяг</option>
+                    <option value="Книги">Книги</option>
+                </select>
+            </label>
+            <label>Зображення (URL): <input type="url" id="product-image" required /></label>
+            <div class="modal-actions">
+                <button type="submit">Зберегти</button>
+                <button type="button" id="close-modal">Скасувати</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="script1.js"></script>
+</body>
+</html>
