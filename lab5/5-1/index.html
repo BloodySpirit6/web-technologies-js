@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моделювання лампочки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Моделювання лампочки</h1>
+
+<div class="controls">
+    <select id="bulbType">
+        <option value="regular">Звичайна лампочка</option>
+        <option value="energy-saving">Енергозберігаюча</option>
+        <option value="led">Світлодіодна</option>
+    </select>
+    <button id="toggleBtn">Включити</button>
+    <button id="brightnessBtn">Змінити яскравість</button>
+    <button id="autoOffBtn">Автовимкнення (1 хв)</button>
+</div>
+
+<div class="bulb-container">
+    <div id="bulb" class="bulb"></div>
+</div>
+
+<div class="status">
+    Стан: <span id="statusText">вимкнено</span>
+</div>
+
+<div class="brightness-control">
+    Поточна яскравість: <span id="brightnessValue">100%</span>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

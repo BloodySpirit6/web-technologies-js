@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --dark-color: #454757;
+    --light-color: #f8f9fa;
+    --success-color: #4cc9f0;
+    --warning-color: #f8961e;
+    --danger-color: #f72585;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f5f7fa;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.bulb-container {
+    margin: 2rem 0;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bulb {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 2px solid var(--dark-color);
+    background-color: #e9ecef;
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.bulb::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 30px;
+    background-color: #454757;
+    border-radius: 0 0 10px 10px;
+    z-index: -1;
+}
+
+.bulb.on {
+    background-color: #ffea00;
+    box-shadow: 0 0 60px #ffea00, 0 0 120px rgba(255, 234, 0, 0.5);
+    animation: pulse 2s infinite alternate;
+}
+
+.bulb.led.on {
+    background-color: #38b000;
+    box-shadow: 0 0 60px #38b000, 0 0 120px rgba(56, 176, 0, 0.5);
+}
+
+.bulb.energy-saving.on {
+    background-color: #00b4d8;
+    box-shadow: 0 0 60px #00b4d8, 0 0 120px rgba(0, 180, 216, 0.5);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 60px currentColor, 0 0 120px rgba(0, 180, 216, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 90px currentColor, 0 0 150px rgba(0, 180, 216, 0.7);
+    }
+}
+
+.controls {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+select {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #dee2e6;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1rem;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.4);
+}
+
+#brightnessBtn {
+    background-color: var(--accent-color);
+}
+
+#brightnessBtn:hover {
+    background-color: #3a86ff;
+}
+
+#autoOffBtn {
+    background-color: var(--warning-color);
+}
+
+#autoOffBtn:hover {
+    background-color: #f3722c;
+}
+
+.status {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#statusText {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.brightness-control {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#brightnessValue {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+

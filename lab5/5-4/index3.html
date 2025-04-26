@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Облік продуктів</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+<div class="container">
+  <h1>Система обліку продуктів</h1>
+
+  <section class="product-management">
+    <h2>Управління продуктами</h2>
+    <div class="form-group">
+      <input type="text" id="productName" placeholder="Назва продукту">
+      <input type="number" id="productPrice" placeholder="Ціна" min="0" step="0.01">
+      <input type="number" id="productQuantity" placeholder="Кількість" min="0">
+      <button id="addProduct">Додати продукт</button>
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="searchProduct" placeholder="Пошук продукту">
+      <button id="searchBtn">Пошук</button>
+    </div>
+
+    <!-- Додайте цей блок для відображення результату -->
+    <div class="search-result" id="searchResult">
+      <div class="search-result-item">
+        <span class="search-result-label">ID:</span>
+        <span class="search-result-value" id="resultId"></span>
+      </div>
+      <div class="search-result-item">
+        <span class="search-result-label">Назва:</span>
+        <span class="search-result-value" id="resultName"></span>
+      </div>
+      <div class="search-result-item">
+        <span class="search-result-label">Ціна:</span>
+        <span class="search-result-value" id="resultPrice"></span>
+      </div>
+      <div class="search-result-item">
+        <span class="search-result-label">Кількість:</span>
+        <span class="search-result-value" id="resultQuantity"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="productId" placeholder="ID продукту">
+      <input type="text" id="updateName" placeholder="Нова назва">
+      <input type="number" id="updatePrice" placeholder="Нова ціна" min="0" step="0.01">
+      <input type="number" id="updateQuantity" placeholder="Нова кількість" min="0">
+      <button id="updateProduct">Оновити</button>
+      <button id="deleteProduct">Видалити</button>
+    </div>
+  </section>
+
+  <section class="order-management">
+    <h2>Управління замовленнями</h2>
+    <div class="form-group">
+      <input type="text" id="orderProductId" placeholder="ID продукту">
+      <input type="number" id="orderQuantity" placeholder="Кількість" min="1">
+      <button id="placeOrder">Зробити замовлення</button>
+    </div>
+  </section>
+
+  <section class="display-section">
+    <div class="products-list" id="productsList">
+      <h3>Список продуктів</h3>
+      <div class="table-header">
+        <span>ID</span>
+        <span>Назва</span>
+        <span>Ціна</span>
+        <span>Кількість</span>
+      </div>
+      <div class="table-body" id="productsTableBody"></div>
+    </div>
+
+    <div class="orders-list" id="ordersList">
+      <h3>Історія замовлень</h3>
+      <div class="table-header">
+        <span>ID замовлення</span>
+        <span>ID продукту</span>
+        <span>Кількість</span>
+        <span>Дата</span>
+      </div>
+      <div class="table-body" id="ordersTableBody"></div>
+    </div>
+  </section>
+</div>
+
+<script src="script3.js"></script>
+</body>
+</html>
