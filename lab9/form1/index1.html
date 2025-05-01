@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <div class="form-header">
+    <h1>Create Account</h1>
+  </div>
+
+  <form id="registrationForm">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="firstName">First Name*</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+        <span class="error" id="firstNameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name*</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+        <span class="error" id="lastNameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <div class="input-with-icon">
+          <i class="fas fa-envelope icon"></i>
+          <input type="text" id="email" name="email" placeholder="your.email@example.com">
+        </div>
+        <span class="error" id="emailError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone*</label>
+        <div class="input-with-icon">
+          <i class="fas fa-phone icon"></i>
+          <input type="text" id="phone" name="phone" placeholder="+380XXXXXXXXX">
+        </div>
+        <span class="error" id="phoneError"></span>
+      </div>
+
+      <div class="form-group password-container">
+        <label for="password">Password*</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock icon"></i>
+          <input type="password" id="password" name="password" placeholder="At least 6 characters">
+          <span class="toggle-password" id="togglePassword"><i class="far fa-eye"></i></span>
+        </div>
+        <span class="error" id="passwordError"></span>
+      </div>
+
+      <div class="form-group password-container">
+        <label for="confirmPassword">Confirm Password*</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock icon"></i>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+          <span class="toggle-password" id="toggleConfirmPassword"><i class="far fa-eye"></i></span>
+        </div>
+        <span class="error" id="confirmPasswordError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="birthDate">Date of Birth*</label>
+        <div class="input-with-icon">
+          <i class="fas fa-calendar-alt icon"></i>
+          <input type="date" id="birthDate" name="birthDate">
+        </div>
+        <span class="error" id="birthDateError"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Gender*</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="sex" value="male">
+            <span class="radio-custom"></span>
+            Male
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="sex" value="female">
+            <span class="radio-custom"></span>
+            Female
+          </label>
+        </div>
+        <span class="error" id="sexError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country*</label>
+        <div class="select-wrapper">
+          <i class="fas fa-globe icon"></i>
+          <select id="country" name="country">
+            <option value="">Select Country</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="Poland">Poland</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+          </select>
+        </div>
+        <span class="error" id="countryError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City*</label>
+        <div class="select-wrapper">
+          <i class="fas fa-city icon"></i>
+          <select id="city" name="city" disabled>
+            <option value="">Select City</option>
+          </select>
+        </div>
+        <span class="error" id="cityError"></span>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">
+      <span class="btn-text">Register Now</span>
+      <i class="fas fa-arrow-right btn-icon"></i>
+    </button>
+  </form>
+
+  <div id="successMessage" class="success-message">
+    <i class="fas fa-check-circle success-icon"></i>
+    <h2>Registration Successful!</h2>
+    <p>Thank you for joining our community.</p>
+  </div>
+</div>
+
+<script src="script1.js"></script>
+</body>
+</html>
