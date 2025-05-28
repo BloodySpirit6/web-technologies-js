@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friend Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="auth-container" class="container">
+    <div class="auth-form">
+      <h1>Welcome to FriendSearch</h1>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button type="submit">Login</button>
+        <p class="toggle-auth">Don't have an account? <a href="#" id="show-register">Register</a></p>
+      </form>
+
+      <form id="register-form" class="hidden">
+        <div class="form-group">
+          <label for="register-name">Name</label>
+          <input type="text" id="register-name" required>
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" required>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" required>
+        </div>
+        <button type="submit">Register</button>
+        <p class="toggle-auth">Already have an account? <a href="#" id="show-login">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="main-container" class="hidden">
+    <header>
+      <div class="header-content">
+        <h1>FriendSearch</h1>
+        <div class="user-info">
+          <span id="current-user"></span>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="controls">
+        <div class="search-container">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Search friends...">
+        </div>
+        <nav class="tabs">
+          <button class="tab-btn active" data-tab="all">All Friends</button>
+          <button class="tab-btn" data-tab="favorites">Favorites</button>
+        </nav>
+        <div class="filter-sort-container">
+          <div class="filter-section">
+            <h3>Filters</h3>
+            <div class="filter-group">
+              <label for="age-range-inputs">Age Range:</label>
+              <div class="range-inputs" id="age-range-inputs">
+                <input type="number" id="min-age" placeholder="Min" min="18" max="100">
+                <span>-</span>
+                <input type="number" id="max-age" placeholder="Max" min="18" max="100">
+              </div>
+            </div>
+            <div class="filter-group">
+              <label for="gender-filter">Gender:</label>
+              <select id="gender-filter">
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="country-filter">Country:</label>
+              <select id="country-filter">
+                <option value="all">All</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="email-filter">Email:</label>
+              <input type="text" id="email-filter" placeholder="Filter by email...">
+            </div>
+          </div>
+
+          <div class="sort-section">
+            <h3>Sort By</h3>
+            <div class="sort-group">
+              <select id="sort-by">
+                <option value="name-asc">Name (A-Z)</option>
+                <option value="name-desc">Name (Z-A)</option>
+                <option value="age-asc">Age (Low to High)</option>
+                <option value="age-desc">Age (High to Low)</option>
+                <option value="registered-asc">Registration Date (Oldest)</option>
+                <option value="registered-desc">Registration Date (Newest)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="error-message" class="hidden"></div>
+
+      <div id="loading-spinner" class="hidden">
+        <div class="spinner"></div>
+      </div>
+
+      <div id="user-cards-container"></div>
+
+      <div id="pagination-container">
+        <div class="pagination">
+          <div id="page-numbers"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
